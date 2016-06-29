@@ -55,7 +55,7 @@
                 @*<img data-ng-show="showMainVideoImage" />*@
             </div>-->
         <div class="logo-section">
-          <img class="image" src="~/Content/images/game-logo.png" />
+          <img class="image" src="src/content/images/game-logo.png" />
           <!--<p class="header-text">{{headerSubText}}</p>-->
           <div data-ng-if="locationService.page !== 'overview'" style="margin-top: 10px;">
             <a class="link-button" href="/">
@@ -66,7 +66,7 @@
       </div>
 
       <div class="body-section overlay-container" data-ng-switch="locationService.page">
-        <div class="fade-animation overlay" data-ng-switch-when="overview">@Html.Partial("overview-module")</div>
+        <div class="fade-animation overlay" data-ng-switch-when="overview"><div ng-include="'src/pages/overview-module.html'"></div></div>
         <div class="fade-animation overlay" data-ng-switch-when="play">@Html.Partial("play-module")</div>
         <div class="fade-animation overlay" data-ng-switch-when="blog">@Html.Partial("blog-module")</div>
         <div class="fade-animation overlay" data-ng-switch-when="development">@Html.Partial("development-module")</div>

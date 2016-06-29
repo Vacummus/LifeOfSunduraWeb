@@ -1,0 +1,63 @@
+﻿<div class="blog-module" data-ng-controller="blog-controller" data-ng-switch="displayType">
+    @*<div class="fade-animation" data-ng-switch-when="content">
+            <h3>
+                <a class="link-button" data-ng-if="isSinglePost" data-ng-href="#/blog">
+                    <span class="fa-reorder fa"></span>
+                    View all Posts
+                </a>
+            </h3>
+            <div data-ng-repeat="post in posts">
+                <div class="card" id="{{post.id}}">
+                    <h3><a class="link-button" data-ng-href="#/blog/{{post.id}}">{{post.title}}</a></h3>
+
+                    <div class="body" data-ng-switch="post.type">
+                        <div data-ng-switch-when="photo">
+                            <div data-ng-repeat="photo in post.photos" class="image-container">
+                                <img src="{{photo.alt_sizes[0].url}}" alt alt="Alternate Text" />
+                            </div>
+                            <div data-custom-html-bind="post.caption"></div>
+                        </div>
+                        <div data-ng-switch-when="video">
+                            <div class="image-container">
+                                <video controls data-ng-src="{{post.video_url}}" data-ng-style="{ 'max-width': post.player[post.player.length-1].width}"></video>
+                            </div>
+                            <div data-custom-html-bind="post.caption"></div>
+                        </div>
+                        <div data-ng-switch-default>
+                            <div data-custom-html-bind="post.body"></div>
+                        </div>
+                    </div>
+
+                    <div class="date" data-ng-bind="post.date"></div>
+                </div>
+            </div>
+        </div>
+        <div class="error-color fade-animation error-message" data-ng-switch-when="error">
+            <i class="fa fa-warning-sign"></i>
+            <p>An error occurred trying to get the blog posts.</p>
+            <p>Please try again later or visit <a href="http://organizamgame.tumblr.com">OrganizamGame.tumblr.com</a> for the latest blog posts.</p>
+        </div>
+        <div class="loading-icon fade-animation" data-ng-switch-when="loading">
+            <i class="fa-spinner fa-spin fa"></i>
+        </div>*@
+    @*<script type="text/javascript" src="http://organizamgame.tumblr.com/js"></script>*@
+
+    <p>You can follow my development blog through either one of these sites.</p>
+
+    <div>
+        <a class="tile link-button" target="_blank" href="http://organizamgame.tumblr.com/">
+            <span class="fa-tumblr fa"></span>
+            <div>Tumblr</div>
+        </a>
+
+        <a class="tile link-button" target="_blank" href="http://forums.tigsource.com/index.php?topic=47220.msg1125336">
+            <img src="~/Content/images/tigslogo.png" />
+            <div>TigSource</div>
+        </a>
+
+        <a class="tile link-button" target="_blank" href="https://twitter.com/VakeyRujevic">
+            <span class="fa-twitter fa"></span>
+            <div>Twitter</div>
+        </a>
+    </div>
+</div>

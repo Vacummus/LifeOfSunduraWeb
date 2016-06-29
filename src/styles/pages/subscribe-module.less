@@ -1,0 +1,39 @@
+﻿@import (reference) '../base/color';
+
+.subscribe-module {
+    cursor: default;
+
+    .email {
+        margin-bottom: 20px;
+
+        .label {
+            vertical-align: middle;
+        }
+
+        .input {
+            font-size: 20px;
+            width: 250px;
+            color: @text-color;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .subscribe-module {
+        .email {
+            .input {
+                width: 180px;
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .subscribe-module {
+        .email {
+            .input {
+                width: 120px;
+            }
+        }
+    }
+}

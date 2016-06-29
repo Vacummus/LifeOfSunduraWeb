@@ -1,0 +1,88 @@
+﻿
+@module-width: 960px;
+
+.play-module {
+    .feedback {
+        text-align: center;
+        padding-bottom: 40px;
+
+        .text-box {
+            height: 150px;
+            width: 450px;
+        }
+    }
+
+    .game {
+        display: inline-block;
+        margin: 20px 0 0;
+        text-align: left;
+
+        .info {
+            text-align: center;
+            vertical-align: top;
+            max-width: @module-width;
+
+            p {
+                margin: 0 0 5px;
+            }
+
+            .name {
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+            .release {
+                font-size: 18px;
+            }
+
+            .description {
+                max-width: 550px;
+                margin: auto;
+                font-size: 16px;
+            }
+        }
+
+        .unity-player {
+            margin: 10px 0;
+            width: @module-width;
+            text-align: center;
+
+            .content {
+                display: inline-block;
+            }
+        }
+
+        .low-screen-size {
+            text-align: center;
+            border: solid 2px #B2B2B2;
+            margin: 20px;
+            padding: 10px;
+
+            .screen-size-icon {
+                font-size: 150px;
+            }
+        }
+    }
+}
+
+//Smaller then
+@media (max-width: @module-width) {
+    .play-module {
+        .game {
+            .game-section {
+                display: none;
+            }
+        }
+    }
+}
+
+//Greater then
+@media (min-width: @module-width) {
+    .play-module {
+        .game {
+            .low-screen-size {
+                display: none;
+            }
+        }
+    }
+}

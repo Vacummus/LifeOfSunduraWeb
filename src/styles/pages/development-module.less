@@ -1,0 +1,42 @@
+﻿@import (reference) '../base/color';
+
+.development-module {
+    padding-bottom: 15px;
+
+    .page-description {
+        margin-bottom: 10px;
+    }
+
+    .estimates {
+        padding: 10px 40px;
+        margin-bottom: 10px;
+        text-align: left;
+        display: inline-block;
+        width: 260px;
+        border: 1px;
+        border-style: solid none;
+
+        .item {
+            margin: 3px 0;
+        }
+    }
+
+    .mission-list {
+        text-align: left;
+        display: inline-block;
+        width: 320px;
+
+        .fa {
+            display: block;
+            padding: 5px 0;
+        }
+
+        .fa-check-square-o {
+            color: @success-color;
+        }
+
+        .fa-square-o:before, .fa-check-square-o:before {
+            padding: 0 5px;
+        }
+    }
+}

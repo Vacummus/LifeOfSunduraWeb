@@ -1,0 +1,33 @@
+﻿@import (reference) 'color';
+
+.link-button {
+    color: @link-color;
+    cursor: pointer;
+
+    &:hover {
+        color: @link-hover-color;
+    }
+}
+
+a.link-button {
+    text-decoration: none;
+}
+
+.button {
+    color: @link-color;
+    cursor: pointer;
+
+    &:hover {
+        color: @link-hover-color;
+    }
+
+    border: solid 1px;
+    padding: 0 5px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+button.button {
+    font-size: inherit;
+    background: none;
+}

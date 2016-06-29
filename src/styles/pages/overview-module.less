@@ -1,0 +1,108 @@
+﻿@import (reference) '../base/color';
+
+.overview-module {
+    @max-width: 950px;
+    padding-bottom: 40px;
+
+    .background-image {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    .overview-section {
+        margin: auto;
+        padding: 0 20px;
+        border-bottom: solid 1px #8E8E8E;
+        margin-bottom: 20px;
+        max-width: @max-width;
+
+        p {
+            max-width: @max-width;
+            margin: 20px auto;
+        }
+
+        .tile {
+            .fa {
+                font-size: 50px;
+            }
+
+            img {
+                width: 55px;
+                position: relative;
+                top: 5px;
+            }
+        }
+
+        .section-title {
+            font-size: 25px;
+            color: @text-color;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .item {
+            display: inline-block;
+            font-size: 20px;
+            color: #4DA8BA;
+            margin: 15px;
+            vertical-align: top;
+
+            .image {
+                width: 150px;
+            }
+
+            .text {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .chapters-list {
+                text-align: left;
+                width: 300px;
+            }
+        }
+
+        .email {
+            margin-bottom: 20px;
+
+            .label {
+                vertical-align: middle;
+            }
+
+            .input {
+                font-size: 20px;
+                width: 250px;
+                color: @text-color;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .overview-module .overview-section {
+        .email {
+            .input {
+                width: 180px;
+            }
+        }
+
+        .tile {
+            padding: 0 8px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .overview-module .overview-section {
+        .email {
+            .input {
+                width: 120px;
+            }
+        }
+
+
+    }
+}

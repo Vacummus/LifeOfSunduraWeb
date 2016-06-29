@@ -1,0 +1,139 @@
+﻿<div class="play-module" data-ng-controller="play-controller">
+    <div data-ng-repeat="game in games">
+        <div class="game" data-ng-if="game.isPlaying">
+            <div class=" info">
+                <p class="name">{{game.name}}</p>
+                <p class="release">Release: {{game.release}}</p>
+                <p class="description" data-custom-html-bind="game.description"></p>
+                <br></br>
+                <p class="description"><strong>NOTE: </strong>Unity Web Player is not supported on Chrome anymore. Please use Firefox or Internet Explorer to play.</p>
+            </div>
+
+            <div class="game-section" data-ng-if="locationService.page === 'play'">
+                <div data-ng-if="!game.isWebGL" data-ng-init="initGame(game)">
+                    <div class="unity-player">
+                        <div class="content">
+                            <div id="unityPlayer">
+                                <div class="missing">
+                                    <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+                                        <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+                                    </a>
+                                </div>
+                                <div class="broken">
+                                    <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+                                        <img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div data-ng-if="game.isWebGL">
+                    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
+                    <a title="Fullscreen" onclick="SetFullscreen(1);">Play FullScreen</a>
+
+                    <script type='text/javascript'>
+                        // connect to canvas
+                        setTimeout(function () {
+                            console.log('hit', currentGameFolder);
+                            var Module = {
+                                filePackagePrefixURL: "Release/",
+                                memoryInitializerPrefixURL: "Release/",
+                                preRun: [],
+                                postRun: [],
+                                print: (function () {
+                                    return function (text) {
+                                        console.log(text);
+                                    };
+                                })(),
+                                printErr: function (text) {
+                                    console.error(text);
+                                },
+                                canvas: document.getElementById('canvas'),
+                                progress: null,
+                                setStatus: function (text) {
+                                    if (this.progress == null) {
+                                        if (typeof UnityProgress != 'function')
+                                            return;
+                                        this.progress = new UnityProgress(canvas);
+                                    }
+                                    if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+                                    if (text === Module.setStatus.text) return;
+                                    this.progress.SetMessage(text);
+                                    var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+                                    if (m)
+                                        this.progress.SetProgress(parseInt(m[2]) / parseInt(m[4]));
+                                    if (text === "")
+                                        this.progress.Clear()
+                                },
+                                totalDependencies: 0,
+                                monitorRunDependencies: function (left) {
+                                    this.totalDependencies = Math.max(this.totalDependencies, left);
+                                    Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies - left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+                                }
+                            };
+                            Module.setStatus('Downloading (0.0/1)');
+                        }, 30);
+                    </script>
+                    <script src="Release/UnityConfig.js"></script>
+                    <script src="Release/fileloader.js"></script>
+                    <script>
+                        setTimeout(function () {
+                            if (!(!Math.fround)) {
+                                var script = document.createElement('script');
+                                script.src = "Release/webgl.js";
+                                document.body.appendChild(script);
+                            } else {
+                                var codeXHR = new XMLHttpRequest();
+                                codeXHR.open('GET', 'Release/webgl.js', true);
+                                codeXHR.onload = function () {
+                                    var code = codeXHR.responseText;
+                                    if (!Math.fround) {
+                                        console.log('optimizing out Math.fround calls');
+                                        code = code.replace(/Math_fround\(/g, '(').replace("'use asm'", "'almost asm'")
+                                    }
+
+                                    var blob = new Blob([code], { type: 'text/javascript' });
+                                    codeXHR = null;
+                                    var src = URL.createObjectURL(blob);
+                                    var script = document.createElement('script');
+                                    script.src = URL.createObjectURL(blob);
+                                    script.onload = function () {
+                                        URL.revokeObjectURL(script.src);
+                                    };
+                                    document.body.appendChild(script);
+                                };
+                                codeXHR.send(null);
+                            }
+                        }, 30);
+                    </script>
+                </div>
+            </div>*@
+
+            <div class="feedback">
+                <div data-ng-hide="feedbackSuccessful">
+                    <p>Submit feedback about this prototype</p>
+                    <textarea class="text-box" data-ng-model="feedbackText"></textarea>
+                    <div>
+                        <button class="button" data-ng-click="submitFeedback(feedbackText)">Submit</button>
+                    </div>
+                </div>
+
+                <p data-ng-show="feedbackSuccessful" class="success-color">
+                    <span class="fa fa-check"></span>
+                    Thank you! Your feedback has been submitted.
+                </p>
+                <p data-ng-show="feedbackFailed" class="error-color">
+                    <span class="fa fa-times"></span>
+                    An unknown error occurred trying to submit your feedback.
+                </p>
+            </div>
+
+            <div class="low-screen-size">
+                <span class="screen-size-icon fa fa-photo"></span>
+                <p>This game can only be played if your browser resolution width is a minimum of 960.</p>
+            </div>
+        </div>
+    </div>
+</div>
