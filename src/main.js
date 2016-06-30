@@ -792,18 +792,9 @@ mainApp.directive('customHtmlBind', ['$compile', function ($compile) {
     }
 }]);
 
-var updateIframeSizes = function () {
-    //var $postBody = $('.blog-module .post .body');
-    //var $iframes = $postBody.find('iframe');
-
-    //var width = $postBody.width();
-    //var height = $postBody.height
-    //var percantage = $iframes.height() / $iframes.width();
-
-    //$iframes.css({
-    //    'max-width': width,
-    //    'max-height': width * percantage
-    //});
+var updateHeaderHeight = function () {
+    $('.header').height($('.header .logo-section').outerHeight());
 };
 
-$(window).resize(updateIframeSizes);
+updateHeaderHeight();
+$(window).resize(updateHeaderHeight);
