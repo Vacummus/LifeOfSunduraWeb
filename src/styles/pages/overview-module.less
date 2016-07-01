@@ -26,6 +26,12 @@
                 height: 10px;
                 display: inline-block;
                 border: solid 1px;
+                margin-right: -6px;
+                border-right: none;
+
+                &:last-child {
+                    border-right: solid 1px;
+                }
 
                 &.completed {
                     background: @success-color;
