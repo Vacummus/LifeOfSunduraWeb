@@ -1,28 +1,21 @@
-﻿<div class="overview-module">
-    <!--<div class="overview-section">-->
-    <!--<img class="image" width="800" src="~/Content/images/overiew-image.png" />-->
-    <!--<img class="image" width="800" src="https://dl.dropboxusercontent.com/u/99750801/overiew-image.png" />-->
-    <!--<p>Play the life of an Organism from birth to death.</p>
-        </div>-->
-    <!--<img class="background-image" src="~/Content/images/screenshot15.png" />-->
-    <div class="overview-section">
-
-    </div>
+﻿<div class="overview-module" ng-controller="overview-controller">
     <div class="overview-section">
         <!--<div class="section-title">Gameplay</div>-->
         <p>
-            An interactive story of an organism's lifespan, from birth to death.
+            An interactive story of an organism's life from birth to death in a habitat that is slowly diminishing due to the extraction
+            of vital resources by the ever growing artificial organisms.
         </p>
 
-        <p>
-            Sundura is an organism that is constantly on the move, having to migrate with her family north to the feeding grounds
-            and then back south to mating/birthing grounds. Hey species manuevarbility brings balance to the habitat which allows
-            life to flourish. 
-            Sundura is an organism who is born into a habitat that is slowly diminishing due to the extraction of vital resources
-            by the ever growing artificial organisms. Upon birth she must adapt inorder to unite with her mother.
-        </p>
+        <!--<p>
+            Sundura is an organism that is constantly on the move, having to migrate with her family north to the feeding grounds and
+            then back south to mating/birthing grounds. Hey species manuevarbility brings balance to the habitat which allows
+            life to flourish. Sundura is an organism who is born into a habitat that is slowly diminishing due to the extraction
+            of vital resources by the ever growing artificial organisms. Upon birth she must adapt inorder to unite with
+            her mother.
+        </p>-->
 
-        
+
+
         <!--</div>
 
             <div class="overview-section">
@@ -38,39 +31,52 @@
                 life prevails and finds a way to give meaning through kindness, purpose, and community.
             </p>-->
     </div>
-    
+
     <div class="overview-section">
-        <!--<div class="section-title">Development Status</div>-->
-        
+        <div class="section-title">Inspiration</div>
+
         <p>
-            Here are a few animated gifs of the game during it's pre-production stages. 
-            They are experimental and do not represent the final product of the game.
+            Much of the game is inspired by the conflicts between nature and industrilization. Through out the industrilization era,
+            forests have been cut down, landscapes have been reshaped, rivers have been polluted, etc. From the perspecive
+            of a deer or a bird that lives in a forest, seeing these gigantic machinery that cut down trees must be very unnatural
+            to the organic life style that they are used to. And it is this perspective that is at the heart of the game's
+            inspiration.
         </p>
-        
-        <p><img width="500" src="http://i.imgur.com/sxhAfYn.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/iA9Xcrp.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/T9u9mTe.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/OOLeczl.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/D2h1Gv5.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/MEHTuIl.gif" /></p>
     </div>
-    
+
     <div class="overview-section">
         <div class="section-title">Development Status</div>
 
         <p>
-            The game is in the early stages of production and is being developed by me, <a class="link-button" target="_blank" href="https://twitter.com/VakeyRujevic">Vakey Rujevic.</a>
-            You can follow the development of the game through either one of these sites.
+            The game is in its early stages of production and is being developed by me,
+            <a class="link-button" target="_blank" href="https://twitter.com/VakeyRujevic">Vakey Rujevic.</a>
+            Due to it's large scope, the game will be broken up and released into the following 4 chapters.
+            The following also represnts the game's dev progress indicator.
         </p>
 
-        <div>
+        <div class="section-block chapters">
+            <div ng-repeat="chapter in chapters" class="chapter-item">
+                <div class="chapter-title">{{chapter.title}}</div>
+                <div class="chapter-progress">
+                    <div ng-class="{ 'completed': chapter.progress >= 1/5 }" class="chapter-progress-item"></div>
+                    <div ng-class="{ 'completed': chapter.progress >= 2/5 }" class="chapter-progress-item"></div>
+                    <div ng-class="{ 'completed': chapter.progress >= 3/5 }" class="chapter-progress-item"></div>
+                    <div ng-class="{ 'completed': chapter.progress >= 4/5 }" class="chapter-progress-item"></div>
+                    <div ng-class="{ 'completed': chapter.progress >= 5/5 }" class="chapter-progress-item"></div>
+                </div>
+            </div>
+        </div>
+
+        <p>You can follow the development of the game through either one of these sites.</p>
+
+        <div class="section-block">
             <a class="tile link-button" target="_blank" href="http://birthofsundura.tumblr.com/">
                 <span class="fa-tumblr fa"></span>
                 <div>Tumblr</div>
             </a>
 
             <a class="tile link-button" target="_blank" href="http://forums.tigsource.com/index.php?topic=47220.msg1125336"
-               data-ng-mouseenter="tigHover = true;" data-ng-mouseleave="tigHover = false">
+                data-ng-mouseenter="tigHover = true" data-ng-mouseleave="tigHover = false">
                 <img data-ng-hide="tigHover" src="src/content/images/tigslogo.png" />
                 <img data-ng-show="tigHover" src="src/content/images/tigslogo-hover.png" />
                 <div>TigSource</div>
@@ -81,35 +87,31 @@
                 <div>Twitter</div>
             </a>
         </div>
-        <div data-ng-controller="subscribe-controller">
-            <!--<p>Subscribe to the game's monthly newsletter.</p>
-            <div class="email">
-                <span class="label">Email: </span>
-                <input class="input" type="text" data-ng-model="email" />
-                <span class="button" data-ng-click="submitEmail()">Submit</span>
-            </div>-->
+    </div>
 
-            <p data-ng-show="subscribeSuccessful" class="success-color">
-                <span class="fa fa-check"></span>
-                Success! You have been added to our subscription list.
-            </p>
-            <p data-ng-show="subscribeFailed" class="error-color">
-                <span class="fa fa-times"></span>
-                {{errorMessage}}
-            </p>
+    <div class="overview-section">
+        <div class="section-title">Pre-Production</div>
 
-            <p></p>
-        </div>
+        <p>
+            Here are a few animated gifs of the game during it's pre-production stages (all in game). They are experimental and do not represent the
+            final product of the game.
+        </p>
+
+        <p><img width="500" src="http://i.imgur.com/sxhAfYn.gif" /></p>
+        <p><img width="500" src="http://i.imgur.com/iA9Xcrp.gif" /></p>
+        <p><img width="500" src="http://i.imgur.com/T9u9mTe.gif" /></p>
+        <p><img width="500" src="http://i.imgur.com/OOLeczl.gif" /></p>
+        <p><img width="500" src="http://i.imgur.com/D2h1Gv5.gif" /></p>
+        <p><img width="500" src="http://i.imgur.com/MEHTuIl.gif" /></p>
     </div>
 
     <div class="overview-section">
         <div class="section-title">Contact</div>
 
-        <p>Want to get in touch? I would love to hear from you. Feel free to email me at:</p>
+        <p>Want to get in touch? Feel free to email me at:</p>
         <p>
             <a href="mailto:vakey.rujevic@gmail.com">
-                <span class="fa fa-envelope"></span>
-                vakey.rujevic@gmail.com
+                <span class="fa fa-envelope"></span> vakey.rujevic@gmail.com
             </a>
         </p>
     </div>

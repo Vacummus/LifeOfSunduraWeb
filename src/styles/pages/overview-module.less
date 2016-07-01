@@ -12,6 +12,28 @@
         z-index: -1;
     }
 
+    .chapters {
+        .chapter-item {
+            display: inline-block;
+            padding: 0 20px;
+
+            .chapter-title {
+                font-weight: bold;
+            }
+
+            .chapter-progress-item {
+                width: 20px;
+                height: 10px;
+                display: inline-block;
+                border: solid 1px;
+
+                &.completed {
+                    background: @success-color;
+                }
+            }
+        }
+    }
+
     .overview-section {
         margin: auto;
         padding: 0 20px;
@@ -19,7 +41,7 @@
         margin-bottom: 20px;
         max-width: @max-width;
 
-        p {
+        p, .section-block {
             max-width: @max-width;
             margin: 20px auto;
         }
