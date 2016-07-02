@@ -805,8 +805,7 @@ var updateHeaderHeight = function () {
     $('.header').height($('.header .logo-section').outerHeight());
 };
 
-
-$('document').ready(function () {
+$('.header .logo-section img').on('load', function() {
     updateHeaderHeight();
     $(window).resize(updateHeaderHeight);
 });
