@@ -432,12 +432,12 @@ mainApp.controller('overview-controller', ['$scope', '$timeout', function ($scop
     ];
 
     $scope.animatedGifs = [
-        { coverGif: "/src/content/images/gifs/1-gif-cover.gif", gif: "http://i.imgur.com/sxhAfYn.gif" },
-        { coverGif: "/src/content/images/gifs/2-gif-cover.gif", gif: "http://i.imgur.com/iA9Xcrp.gif" },
-        { coverGif: "/src/content/images/gifs/3-gif-cover.gif", gif: "http://i.imgur.com/T9u9mTe.gif" },
-        { coverGif: "/src/content/images/gifs/4-gif-cover.gif", gif: "http://i.imgur.com/OOLeczl.gif" },
-        { coverGif: "/src/content/images/gifs/5-gif-cover.gif", gif: "http://i.imgur.com/D2h1Gv5.gif" },
-        { coverGif: "/src/content/images/gifs/6-gif-cover.gif", gif: "http://i.imgur.com/MEHTuIl.gif" }
+        { coverGif: "src/content/images/gifs/1-gif-cover.gif", gif: "http://i.imgur.comsxhAfYn.gif" },
+        { coverGif: "src/content/images/gifs/2-gif-cover.gif", gif: "http://i.imgur.com/iA9Xcrp.gif" },
+        { coverGif: "src/content/images/gifs/3-gif-cover.gif", gif: "http://i.imgur.com/T9u9mTe.gif" },
+        { coverGif: "src/content/images/gifs/4-gif-cover.gif", gif: "http://i.imgur.com/OOLeczl.gif" },
+        { coverGif: "src/content/images/gifs/5-gif-cover.gif", gif: "http://i.imgur.com/D2h1Gv5.gif" },
+        { coverGif: "src/content/images/gifs/6-gif-cover.gif", gif: "http://i.imgur.com/MEHTuIl.gif" }
     ];
 
     //var documentElement = $(document);
