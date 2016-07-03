@@ -4,7 +4,7 @@
 
         <p>
             Play as Sundura from birth to death in a habitat that is slowly diminishing due to the extraction
-            of vital resources by the ever growing artificial organisms.
+            of vital resources by the ever advancing artificial organisms.
         </p>
     </div>
 
@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <div class="overview-section">
+    <div class="overview-section load-test">
         <div class="section-title">Pre-Production</div>
 
         <p>
@@ -73,12 +73,15 @@
             final product of the game.
         </p>
 
-        <p><img width="500" src="http://i.imgur.com/sxhAfYn.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/iA9Xcrp.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/T9u9mTe.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/OOLeczl.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/D2h1Gv5.gif" /></p>
-        <p><img width="500" src="http://i.imgur.com/MEHTuIl.gif" /></p>
+        <div class="gif-images">
+            <p ng-repeat="image in animatedGifs">
+                <span ng-hide="image.isLoaded && image.visible">
+                    <img  width="500" ng-src="{{image.coverGif}}">
+                    <span class="fa fa-spinner fa-spin"></span>
+                </span>
+                <img width="500" ng-src="{{image.gif}}" ng-class="image.name" ng-if="isPageLoaded" ng-show="image.isLoaded && image.visible" image-onload>
+            </p>
+        </div>
     </div>
 
     <div class="overview-section">
