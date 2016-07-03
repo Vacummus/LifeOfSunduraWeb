@@ -402,7 +402,6 @@ mainApp.directive('imageOnload', function() {
     return {
         restrict: 'A',
         link: function($scope, $element, $attrs) {
-            console.log("load image");
             $element.bind('load', function() {
                 $scope.$evalAsync(function () { $scope.image.isLoaded = true; });
             });
@@ -417,7 +416,7 @@ mainApp.controller('overview-controller', ['$scope', '$timeout', function ($scop
     $scope.isPageLoaded = false;
     var checkOverviewLoaded = function () {
         if($('.load-test').is(':visible')) {
-            $timeout(function () { $scope.isPageLoaded = true; }, 1000);
+            $timeout(function () { $scope.isPageLoaded = true; }, 1500);
         } else {
             $timeout(checkOverviewLoaded, 50);
         }
@@ -441,26 +440,26 @@ mainApp.controller('overview-controller', ['$scope', '$timeout', function ($scop
         { coverGif: "/src/content/images/gifs/6-gif-cover.gif", gif: "http://i.imgur.com/MEHTuIl.gif" }
     ];
 
-    var documentElement = $(document);
+    //var documentElement = $(document);
 
-    var updateGifVisibility = function () {
-        var scrollTop = documentElement.scrollTop();
-        var scrollBottom = scrollTop + $(window).height();
+    // var updateGifVisibility = function () {
+    //     var scrollTop = documentElement.scrollTop();
+    //     var scrollBottom = scrollTop + $(window).height();
 
-        $scope.$evalAsync(function () { 
-            for (var i = 0; i < $scope.animatedGifs.length; i++) {
-                var imageElement = $('.gif-images p:nth-child(' + (i + 1) +')');
-                var image = $scope.animatedGifs[i];
-                var imageTop = imageElement.offset().top - 200;
-                var imageBottom = imageTop + imageElement.height() + 200;
+    //     $scope.$evalAsync(function () { 
+    //         for (var i = 0; i < $scope.animatedGifs.length; i++) {
+    //             var imageElement = $('.gif-images p:nth-child(' + (i + 1) +')');
+    //             var image = $scope.animatedGifs[i];
+    //             var imageTop = imageElement.offset().top - 200;
+    //             var imageBottom = imageTop + imageElement.height() + 200;
 
-                image.visible = imageBottom > scrollTop && scrollBottom > imageTop;
-            }
-        });
-    };
+    //             image.visible = imageBottom > scrollTop && scrollBottom > imageTop;
+    //         }
+    //     });
+    // };
 
-    documentElement.scroll(updateGifVisibility);
-    $(window).resize(updateGifVisibility);
+    // documentElement.scroll(updateGifVisibility);
+    // $(window).resize(updateGifVisibility);
 }]);
 
 var blogData;

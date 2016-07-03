@@ -75,11 +75,11 @@
 
         <div class="gif-images">
             <p ng-repeat="image in animatedGifs">
-                <span ng-hide="image.isLoaded && image.visible">
+                <span ng-hide="image.isLoaded">
                     <img  width="500" ng-src="{{image.coverGif}}">
                     <span class="fa fa-spinner fa-spin"></span>
                 </span>
-                <img width="500" ng-src="{{image.gif}}" ng-class="image.name" ng-if="isPageLoaded" ng-show="image.isLoaded && image.visible" image-onload>
+                <img width="500" ng-src="{{image.gif}}" ng-class="image.name" ng-if="isPageLoaded" ng-show="image.isLoaded" image-onload>
             </p>
         </div>
     </div>
