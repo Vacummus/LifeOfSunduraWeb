@@ -432,7 +432,7 @@ mainApp.controller('overview-controller', ['$scope', '$timeout', function ($scop
     ];
 
     $scope.animatedGifs = [
-        { coverGif: "src/content/images/gifs/1-gif-cover.gif", gif: "http://i.imgur.comsxhAfYn.gif" },
+        { coverGif: "src/content/images/gifs/1-gif-cover.gif", gif: "http://i.imgur.com/sxhAfYn.gif" },
         { coverGif: "src/content/images/gifs/2-gif-cover.gif", gif: "http://i.imgur.com/iA9Xcrp.gif" },
         { coverGif: "src/content/images/gifs/3-gif-cover.gif", gif: "http://i.imgur.com/T9u9mTe.gif" },
         { coverGif: "src/content/images/gifs/4-gif-cover.gif", gif: "http://i.imgur.com/OOLeczl.gif" },
