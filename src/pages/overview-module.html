@@ -3,6 +3,9 @@
         <p>An interactive story of an organism's life.</p>
 
         <p>
+            <!--Play as Sundura from birth to death where you will be raised by your mother along with your siblings,
+            migrating yor way through incredible landscapes filled with life.-->
+
             Play as Sundura from birth to death in a habitat that is slowly diminishing due to the extraction
             of vital resources by the ever advancing artificial organisms.
         </p>
@@ -34,11 +37,10 @@
             <div ng-repeat="chapter in chapters" class="chapter-item">
                 <div class="chapter-title">{{chapter.title}}</div>
                 <div class="chapter-progress">
-                    <div ng-class="{ 'completed': chapter.progress >= 1/5 }" class="chapter-progress-item"></div>
-                    <div ng-class="{ 'completed': chapter.progress >= 2/5 }" class="chapter-progress-item"></div>
-                    <div ng-class="{ 'completed': chapter.progress >= 3/5 }" class="chapter-progress-item"></div>
-                    <div ng-class="{ 'completed': chapter.progress >= 4/5 }" class="chapter-progress-item"></div>
-                    <div ng-class="{ 'completed': chapter.progress >= 5/5 }" class="chapter-progress-item"></div>
+                    <div ng-class="{ 'completed': chapter.progress >= 1/4 }" class="chapter-progress-item"></div>
+                    <div ng-class="{ 'completed': chapter.progress >= 2/4 }" class="chapter-progress-item"></div>
+                    <div ng-class="{ 'completed': chapter.progress >= 3/4 }" class="chapter-progress-item"></div>
+                    <div ng-class="{ 'completed': chapter.progress >= 4/4 }" class="chapter-progress-item"></div>
                 </div>
             </div>
         </div>
@@ -77,9 +79,9 @@
             <p ng-repeat="image in animatedGifs">
                 <span ng-hide="image.isLoaded">
                     <img  width="500" ng-src="{{image.coverGif}}">
-                    <span class="fa fa-spinner fa-spin"></span>
+                    <span class="loading-icon fa fa-circle-o-notch fa-spin"></span>
                 </span>
-                <img width="500" ng-src="{{image.gif}}" ng-class="image.name" ng-if="isPageLoaded" ng-show="image.isLoaded" image-onload>
+                <img width="500" ng-src="{{image.gif}}" ng-class="image.name" ng-show="image.isLoaded" image-onload>
             </p>
         </div>
     </div>

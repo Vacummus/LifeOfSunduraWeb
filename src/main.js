@@ -270,16 +270,16 @@
 
 var mainApp = angular.module('main', ["ngAnimate", "ngRoute"]);
 
-var readyStateCheckInterval = setInterval(function () {
-    if (document.readyState === "complete") {
-        clearInterval(readyStateCheckInterval);
-        $('.main-app').removeClass('loading');
+// var readyStateCheckInterval = setInterval(function () {
+//     if (document.readyState === "complete") {
+//         clearInterval(readyStateCheckInterval);
+//         $('.main-app').removeClass('loading');
 
-        if (IsIE()) {
-            $('body').css({ 'font-family': 'Arial' });
-        }
-    }
-}, 10);
+//         if (IsIE()) {
+//             $('body').css({ 'font-family': 'Arial' });
+//         }
+//     }
+// }, 10);
 
 
 function getWindowWidth() {
@@ -310,9 +310,9 @@ var locationService = {
     show404: function () { this.page = 'error'; }
 };
 
-mainApp.controller('route-controller', ['$scope', '$location', '$http', '$timeout', function ($scope, $location, $http, $timeout) {
+mainApp.controller('route-controller', ['$rootScope', '$scope', '$location', '$http', '$timeout', function ($rootScope, $scope, $location, $http, $timeout) {
     $scope.locationService = locationService;
-    $scope.isLoading = true;
+    $rootScope.isLoading = true;
 
     $scope.setRoute = locationService.setRoute = function (routePath) {
         $location.path(routePath);
@@ -412,11 +412,11 @@ mainApp.directive('imageOnload', function() {
     };
 });
 
-mainApp.controller('overview-controller', ['$scope', '$timeout', function ($scope, $timeout) {
-    $scope.isPageLoaded = false;
+mainApp.controller('overview-controller', ['$rootScope', '$scope', '$timeout', function ($rootScope, $scope, $timeout) {
+    $rootScope.isLoading = true;
     var checkOverviewLoaded = function () {
         if($('.load-test').is(':visible')) {
-            $timeout(function () { $scope.isPageLoaded = true; }, 1500);
+            $rootScope.isLoading = false;
         } else {
             $timeout(checkOverviewLoaded, 50);
         }
@@ -425,10 +425,10 @@ mainApp.controller('overview-controller', ['$scope', '$timeout', function ($scop
     checkOverviewLoaded();
 
     $scope.chapters = [
-        { title: "Birth", progress: 1/5 },
-        { title: "Growth", progress: 0/5 },
-        { title: "Purpose", progress: 0/5 },
-        { title: "Death", progress: 0/5 }
+        { title: "Birth", progress: 1/4 },
+        { title: "Growth", progress: 0/4 },
+        { title: "Purpose", progress: 0/4 },
+        { title: "Death", progress: 0/4 }
     ];
 
     $scope.animatedGifs = [
