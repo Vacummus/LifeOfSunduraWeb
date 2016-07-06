@@ -415,7 +415,7 @@ mainApp.directive('imageOnload', function() {
 mainApp.controller('overview-controller', ['$rootScope', '$scope', '$timeout', function ($rootScope, $scope, $timeout) {
     $rootScope.isLoading = true;
     var checkOverviewLoaded = function () {
-        if($('.load-test').is(':visible')) {
+        if($('.gif-images').is(':visible')) {
             $rootScope.isLoading = false;
         } else {
             $timeout(checkOverviewLoaded, 50);
