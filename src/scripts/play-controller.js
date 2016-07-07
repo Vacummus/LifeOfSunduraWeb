@@ -55,22 +55,6 @@ mainApp.controller('play-controller', ['$rootScope','$scope', '$timeout', '$http
         }
     ];
 
-    $scope.submitFeedback = function (feedback) {
-        //ga('send', 'event', 'category', 'action', 'label');
-
-        $http({
-            url: '/api/feedback',
-            method: "POST",
-            data: { feedback: feedback },
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        }).success(function (data, status, headers, config) {
-            $scope.feedbackSuccessful = true;
-        }).error(function (data, status, headers, config) {
-            $scope.feedbackFailed = true;
-            $scope.errorMessage = data;
-        });
-    }
-
     $scope.playGame = function (game) {
         currentGame.isPlaying = false;
         if (game == currentGame) {

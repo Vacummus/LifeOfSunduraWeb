@@ -111,25 +111,6 @@
                 </div>
             </div>-->
 
-            <div class="feedback">
-                <div data-ng-hide="feedbackSuccessful">
-                    <p>Submit feedback about this prototype</p>
-                    <textarea class="text-box" data-ng-model="feedbackText"></textarea>
-                    <div>
-                        <button class="button" data-ng-click="submitFeedback(feedbackText)">Submit</button>
-                    </div>
-                </div>
-
-                <p data-ng-show="feedbackSuccessful" class="success-color">
-                    <span class="fa fa-check"></span>
-                    Thank you! Your feedback has been submitted.
-                </p>
-                <p data-ng-show="feedbackFailed" class="error-color">
-                    <span class="fa fa-times"></span>
-                    An unknown error occurred trying to submit your feedback.
-                </p>
-            </div>
-
             <div class="low-screen-size">
                 <span class="screen-size-icon fa fa-photo"></span>
                 <p>This game can only be played if your browser resolution width is a minimum of 960.</p>
