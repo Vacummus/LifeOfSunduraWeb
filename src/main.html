@@ -1,0 +1,23 @@
+<div data-ng-controller="route-controller" class="body">
+    <div class="header">
+        <div class="logo-section">
+            <img class="image" src="src/content/images/game-logo.png" />
+            <div data-ng-if="locationService.page !== 'overview'" style="margin-top: 10px;">
+                <a class="link-button" href="/">View Homepage</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-section overlay-container" data-ng-switch="locationService.page">
+        <div class="fade-animation overlay" data-ng-switch-when="overview">
+            <div ng-include="'src/pages/overview-module.html'"></div>
+        </div>
+        <div class="fade-animation overlay" data-ng-switch-when="play">
+            <div ng-include="'src/pages/play-module.html'"></div>
+        </div>
+        <div class="error-message fade-animation overlay" data-ng-switch-default>
+            <div class="icon error-color"><i class="fa-warning-sign fa"></i></div>
+            <p>404 Not Found: The requested url '{{locationService.route}}' does not exist on this server.</p>
+        </div>
+    </div>
+</div>

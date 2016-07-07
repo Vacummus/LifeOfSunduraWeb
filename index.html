@@ -36,54 +36,8 @@
 </head>
 
 <body>
-  <div data-ng-app="main" class="main-app loading" ng-class="{'loading': isLoading }">
-    <div data-ng-controller="route-controller" class="body">
-
-      <!--<div class="menu-section">
-        <span class="item" data-ng-class="{selected: locationService.page === 'overview'}" data-ng-click="setRoute('/overview')">Overview</span>
-        <span class="item" data-ng-class="{selected: locationService.page === 'play'}" data-ng-click="setRoute('/play')">Play</span>
-        <span class="item" data-ng-class="{selected: locationService.page === 'blog'}" data-ng-click="setRoute('/blog')">Dev Blog</span>
-        <span class="item" data-ng-class="{selected: locationService.page === 'development'}" data-ng-click="setRoute('/development')">Development</span>
-        <span class="item" data-ng-class="{selected: locationService.page === 'subscribe'}" data-ng-click="setRoute('/subscribe')">Subscribe</span>
-        <span class="item" data-ng-class="{selected: locationService.page === 'contact'}" data-ng-click="setRoute('/contact')">Contact</span>
-      </div>-->
-      <!--<div class="header" data-ng-click="playVideo()">-->
-      <div class="header">
-        <!--<div class="main-video">
-                <video data-ng-if="locationService.page === 'overview'" autobuffe preload="auto" autoplay loop="loop" data-ng-init="loadVideo()">
-                    @*<source src="https://dl.dropboxusercontent.com/u/99750801/main-video.mp4" type="video/mp4" />*@
-                </video>
-                @*<img data-ng-show="showMainVideoImage" />*@
-            </div>-->
-        <div class="logo-section">
-          <img class="image" src="src/content/images/game-logo.png" />
-          <!--<p class="header-text">{{headerSubText}}</p>-->
-          <div data-ng-if="locationService.page !== 'overview'" style="margin-top: 10px;">
-            <a class="link-button" href="/">
-                        View Homepage
-                    </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="body-section overlay-container" data-ng-switch="locationService.page">
-        <div class="fade-animation overlay" data-ng-switch-when="overview"><div ng-include="'src/pages/overview-module.html'"></div></div>
-        <div class="fade-animation overlay" data-ng-switch-when="play">@Html.Partial("play-module")</div>
-        <div class="fade-animation overlay" data-ng-switch-when="blog">@Html.Partial("blog-module")</div>
-        <div class="fade-animation overlay" data-ng-switch-when="development">@Html.Partial("development-module")</div>
-        <div class="fade-animation overlay" data-ng-switch-when="subscribe">@Html.Partial("subscribe-module")</div>
-        <div class="fade-animation overlay" data-ng-switch-when="contact">@Html.Partial("contact-module")</div>
-        <div class="error-message fade-animation overlay" data-ng-switch-default>
-          <div class="icon error-color"><i class="fa-warning-sign fa"></i></div>
-          <p>404 Not Found: The requested url '{{locationService.route}}' does not exist on this server.</p>
-        </div>
-      </div>
-
-      <!--<footer class="footer">
-        <span class="contact-title">Contact:</span>
-        <a href="mailto:vakey.rujevic@gmail.com">vakey.rujevic@gmail.com</a>
-      </footer>-->
-    </div>
+  <div ng-app="main" class="main-app loading" ng-class="{'loading': isLoading }">
+    <div ng-include="'src/main.html'"></div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -94,10 +48,6 @@
   <script src="lib/jquery-1.8.2.min.js"></script>
   <script src="lib/moment.min.js"></script>
   <script src="build/source-min.js"></script>
-  <!--<script src="~/Scripts/Other/jquery-1.8.2.min.js"></script>
-        <script src="~/Scripts/Other/moment.min.js"></script>
-        <script src="~/Scripts/Application/main.min.js"></script>-->
-  <!--@RenderSection("scripts", required: false)-->
 </body>
 
 </html>
